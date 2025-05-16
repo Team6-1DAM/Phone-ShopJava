@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+    <display-name>Phone_shop WebApp</display-name>
+
+    <context-param>
+        <description>Ruta para almacenar las imágenes de los telefonos</description>
+        <param-name>imagePath</param-name>
+        <param-value>C:\Users\S2-PC00\Downloads\apache-tomcat-9.0.105\webapps\images</param-value>
+    </context-param>
+
+
+=======
 <?xml version="1.0" encoding="UTF-8" ?>
 <web-app>
     <display-name>PhoneShop</display-name>
@@ -6,4 +20,5 @@
         <param-name>image-path</param-name>
         <param-value>C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\phoneshop_pictures</param-value>
     </context-param>
+>>>>>>> 022634fe526cf040f506b423bc7b017709ae1fe9
 </web-app>
