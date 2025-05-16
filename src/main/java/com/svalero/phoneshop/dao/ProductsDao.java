@@ -7,17 +7,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface ProductsDao {
-    public boolean delete(int productsId) throws SQLException;
+    boolean delete(int productsId) throws SQLException;
 
-    public boolean modify(Products products) throws SQLException;
+    boolean modify(Products products) throws SQLException;
 
-    public Products get(int id) throws SQLException, ProductNotFoundException;
+    Products get(int id) throws SQLException, ProductNotFoundException;
+    ArrayList<Products> getAll(String search) throws SQLException;
 
-    public ArrayList<Products> getAll(String search) throws SQLException;
+    ArrayList<Products> getNotOrdered() throws  SQLException;
+    ArrayList<Products> getAll() throws SQLException;
 
-    public ArrayList<Products> getNotOrdered() throws  SQLException;
-    public ArrayList<Products> getAll() throws SQLException;
-
-    public boolean add(Products products) throws SQLException;
+    boolean add(Products products) throws SQLException;
 
 }
