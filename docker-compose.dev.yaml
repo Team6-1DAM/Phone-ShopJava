@@ -1,0 +1,15 @@
+version: "3.4"
+name: phone_shop
+services:
+  db:
+    image: mariadb:11.3.2
+    container_name: phoneshop-db-dev
+    environment:
+      MYSQL_USER: 'alvaro'
+      MYSQL_PASSWORD: 'alvaro'
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
