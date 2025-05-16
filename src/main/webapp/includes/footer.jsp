@@ -12,7 +12,7 @@
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">&copy; 2025 Phone! by Alvaro Reyes</p>
+    <p class="mb-1">&copy; 2025 Phone_shop @2025</p>
   </div>
 </footer>
 

@@ -1,20 +1,18 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.svalero.phoneshop.database.Database" %>
-<%--<%@ page import="com.svalero.phoneshop.dao.DogDaoImpl" %>--%>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="com.svalero.phoneshop.dao.ProductsDao" %>
+<%@ page import="com.svalero.phoneshop.dao.ProductsDaoImpl" %>
 <%@ page import="com.svalero.phoneshop.model.Products" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.svalero.phoneshop.dao.ProductsDao %>
-<%@ page import="java.sql.SQLException" %>
-
 <%@include file="includes/header.jsp"%>
-<%@include file="includes/footer.jsp"%>
+<%@include file="includes/navbar.jsp"%>
 
 <%
     String search = request.getParameter("search");
 %>
 <script>
     function confirmDelete() {
-        return confirm("¿Estás seguro de que quieres eliminar este telefono??");
+        return confirm("Are you sure you want to delete this product?");
     }
 </script>
 <div class="album py-5 bg-body-tertiary">
@@ -37,14 +35,14 @@
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-                ProductsDao ProductDao = new ProductsDaoImpl(database.getConnection());
+                ProductsDao productDao = new ProductsDaoImpl(database.getConnection());
 
-                List<Products> productsList = ProductsDao.getAll(search);
-                for (Products products : productsList) {
+                List<Products> productList = productDao.getAll(search);
+                for (Products products : productList) {
             %>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img class="img-thumbnail" src="/shelter_images/<%= products.getImage() %>" style="width: 100%; height: 225px; object-fit: cover;">
+                    <img class="img-thumbnail" src="/phoneshop_images/<%= products.getImage() %>" style="width: 100%; height: 225px; object-fit: cover;">
                     <div class="card-body">
                         <h4 class="card-text"><%= products.getProduct_name() %></h4>
                         <p class="card-text"><%= products.getDescription() %></p>
@@ -53,22 +51,21 @@
                                 <%
                                     if (role.equals("anonymous")) {
                                 %>
-                                <a href="login.jsp" class="btn btn-sm btn-secondary">Log In para ver</a>
+                                <a href="login.jsp" class="btn btn-sm btn-secondary">Login to see the products</a>
                                 <%
                                 } else if (role.equals("user")) {
                                 %>
-                                <a href="view_dog.jsp?dog_id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Detalles</a>
+                                <a href="view_products.jsp?id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
                                 <%
                                 } else if (role.equals("admin")) {
                                 %>
-                                <a href="view_product.jsp?dog_id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Detalles</a>
-                                <a href="edit_product.jsp?dog_id=<%= products.getId() %>" class="btn btn-sm btn-warning">Modificar</a>
-                                <a onclick="return confirmDelete()" href="delete_product?dog_id=<%= products.getId() %>" class="btn btn-sm btn-danger">Eliminar</a>
+                                <a href="view_products.jsp?id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
+                                <a href="edit_products.jsp?id=<%= products.getId() %>" class="btn btn-sm btn-warning">Modify</a>
+                                <a onclick="return confirmDelete()" href="delete_products?product_id=<%= products.getId() %>" class="btn btn-sm btn-danger">Delete</a>
                                 <%
                                     }
                                 %>
                             </div>
-                            <small class="text-body-secondary"> <%= products.getSale_price() %> </small>
                         </div>
                     </div>
                 </div>
