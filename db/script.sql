@@ -17,7 +17,7 @@ CREATE TABLE user (
 
 CREATE TABLE supplier (
                           id INT AUTO_INCREMENT PRIMARY KEY,
-                          name VARCHAR(50),
+                          supplier_name VARCHAR(50),
                           tel VARCHAR(18),
                           address VARCHAR(50),
                           zip_code VARCHAR(5),
@@ -72,28 +72,28 @@ INSERT INTO user(name,email,phone,city,birth_date,role,username,password)
 VALUES('Roberto','roberto@roberto.es',976587893,'Zaragoza','1981-10-05','user','Roberto','r');
 
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('RetroPC','+34607658712','Calle Tar,4','50500','Tarazona','España','retropc.es','retropc@gmail.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('Manuel Hidalgo Saavedra','+34605787214','Calle Sev,5','41012','Sevilla','España','segundavidaPc.es','mhidalgo@gmail.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('CentroMail calle Cadiz','+34976521697','Calle Cadiz,12','50004','Zaragoza','España','game.es','gameZcadiz@game.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('Star Games','+34978881697','Centro Independencia,21','50004','Zaragoza','España','stargames.es','stargames@star.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('Retro Games','+34976882296','poligono Centrovia,21','50250','La Muela','España','retrogames.es','retrogames@games.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('CEX','+34976111699','Calle Dr Val-Carreres,1','50004','Zaragoza','España','cex.com','cexzar@cex.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('Old School','+34979221688','Calle Bilbao,9','50004','Zaragoza','España','oldschool.com','oldschoolzgz@retropc.com');
 
-INSERT INTO supplier(name,tel,address,zip_code,city,country,website,email)
+INSERT INTO supplier(supplier_name,tel,address,zip_code,city,country,website,email)
 VALUES('RetroMaC','+3497674767','Calle San Juan Bosco,8','50010','Zaragoza','España','retromac.com','retromaczgz@retromac.com');
 --
 --
