@@ -21,8 +21,6 @@ import java.util.ArrayList;
 @MultipartConfig
 public class EditOrdersServlet extends HttpServlet {
 
-    public class EditAdoptionServlet  {
-
         private ArrayList<String> errors;
 
         @Override
@@ -104,4 +102,4 @@ public class EditOrdersServlet extends HttpServlet {
             return errors.isEmpty();
         }
     }
-}
+

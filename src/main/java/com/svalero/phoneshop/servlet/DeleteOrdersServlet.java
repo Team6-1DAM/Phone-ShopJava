@@ -22,7 +22,7 @@ public class DeleteOrdersServlet extends HttpServlet {
 
         HttpSession currentSession = request.getSession();
         if (currentSession.getAttribute("role") == null) {
-            response.sendRedirect("/phone_shop/login.jsp");
+            response.sendRedirect("login.jsp");
             return;
         }
 
@@ -34,7 +34,7 @@ public class DeleteOrdersServlet extends HttpServlet {
             OrderDao orderDao = new OrderDaoImpl(db.getConnection());
             orderDao.delete(Integer.parseInt(ordersId));
 
-            response.sendRedirect("/phone_shop/orders.jsp");
+            response.sendRedirect("orders.jsp");
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         } catch (ClassNotFoundException cnfe) {
