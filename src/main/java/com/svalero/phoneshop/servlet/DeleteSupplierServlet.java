@@ -1,5 +1,7 @@
 package com.svalero.phoneshop.servlet;
 
+import com.svalero.phoneshop.dao.SupplierDao;
+import com.svalero.phoneshop.dao.SupplierDaoImpl;
 import com.svalero.phoneshop.database.Database;
 
 import javax.servlet.ServletException;
