@@ -23,7 +23,7 @@
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container text-decoration-none">
 
-      <a href="/shelter" class="navbar-brand d-flex align-items-center">
+      <a href="/phone_shop" class="navbar-brand d-flex align-items-center">
         <strong>Phone_shop</strong>
       </a>
       <%
