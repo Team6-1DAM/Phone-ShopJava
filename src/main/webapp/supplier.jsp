@@ -58,12 +58,12 @@
             <p class="card-text"><%= supplier.getAddress() %></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="view_supplier.jsp?shelter_id=<%= supplier.getId() %>" class="btn btn-sm btn-secondary">Mas info</a>
+                <a href="view_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-secondary">More info</a>
                 <%
                  if (role.equals("admin")) {
                 %>
-                <a href="edit_supplier.jsp?shelter_id=<%= supplier.getId()  %>" class="btn btn-sm btn-warning">Modificar</a>
-                <a onclick="return confirmDelete()" href="delete_shelter?shelter_id=<%= supplier.getId()  %>" class="btn btn-sm btn-danger">Eliminar</a>
+                <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-warning">Modify</a>
+                <a onclick="return confirmDelete()" href="delete_supplier?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-danger">Eliminar</a>
                 <%
                   }
                 %>
