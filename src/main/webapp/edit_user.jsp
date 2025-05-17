@@ -64,7 +64,7 @@
             }
           },
           404: function(response) {
-            $("#result").html("<div class='alert alert-danger' role='alert'>Error al enviar los datos</div>");
+            $("#result").html("<div class='alert alert-danger' role='alert'>Error sending data</div>");
           },
           500: function(response) {
             console.log(response);
@@ -94,7 +94,7 @@
         <label for="floatingTextarea">Name</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="email" class="form-control" placeholder="Nombre"
+        <input type="text" id="floatingTextarea" name="email" class="form-control" placeholder="Email"
                value="<%= user != null ? user.getEmail() : "" %>">
         <label for="floatingTextarea">Email</label>
       </div>
@@ -109,13 +109,13 @@
         <label for="floatingTextarea">City</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="date" id="floatingTextarea" name="birth_date" class="form-control" placeholder="Fecha de nacimiento"
+        <input type="date" id="floatingTextarea" name="birth_date" class="form-control" placeholder="Birthday"
                value="<%= user != null ? user.getBirth_date() : "" %>">
         <label for="floatingTextarea">Birthday</label>
       </div>
 
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="username" class="form-control" placeholder="Nombre"
+        <input type="text" id="floatingTextarea" name="username" class="form-control" placeholder="Username"
                value="<%= user != null ? user.getUsername() : "" %>">
         <label for="floatingTextarea">Username</label>
       </div>
@@ -145,7 +145,7 @@
       %>
 
       <div class="input-group mb-3 d-flex justify-content-between w-100">
-        <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Guardar">
+        <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Save">
         <p></p>
         <a onclick="return confirmDelete()" href="delete_user?user_id=<%= user.getId() %>" class="btn btn-danger">Delete</a>
       </div>

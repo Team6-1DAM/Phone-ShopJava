@@ -58,7 +58,7 @@
       const formValue = new FormData(form);
       console.log(formValue);
       $.ajax({
-        url: "edit_order",
+        url: "edit_orders",
         type: "POST",
         enctype: "multipart/form-data",
         data: formValue,
@@ -77,11 +77,11 @@
             }
           },
           404: function(response) {
-            $("#result").html("<div class='alert alert-danger' role='alert'>Error al enviar los datos</div>");
+            $("#result").html("<div class='alert alert-danger' role='alert'>Error sending data</div>");
           },
           500: function(response) {
             console.log(response);
-            $("#result").html("<div class='alert alert-danger' role='alert'>" + response.toString() + "</div>");
+            $("#result").html("<div class='alert alert-danger' role='alert'>" + response.responseText + "</div>");
           }
         }
       });
@@ -122,7 +122,7 @@
 
 
       <div class="input-group mb-3">
-        <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Guardar">
+        <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Save">
       </div>
 
       <input type="hidden" name="action" value="<%=action%>">

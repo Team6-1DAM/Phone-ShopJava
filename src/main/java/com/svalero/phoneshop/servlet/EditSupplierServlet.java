@@ -76,16 +76,16 @@ public class EditSupplierServlet extends HttpServlet {
             if (done) {
                 response.getWriter().print("ok");
             } else {
-                response.getWriter().print("Cannot save supplier info");
+                response.getWriter().print("Impossible to save the product changes");
             }
         } catch (SQLException sqle) {
-            response.getWriter().println("Cannot connecto to database");
+            response.getWriter().println("Error connecting to the database");
             sqle.printStackTrace();
         } catch (ClassNotFoundException cnfe) {
-            response.getWriter().println("Could not load database driver");
+            response.getWriter().println("Error charging the driver");
             cnfe.printStackTrace();
         } catch (IOException ioe) {
-            response.getWriter().println("Unknown error: " + ioe.getMessage());
+            response.getWriter().println("Unexpected error: " + ioe.getMessage());
             ioe.printStackTrace();
         } catch (Exception e) {
             response.getWriter().println("Error: " + e.getMessage());

@@ -11,7 +11,7 @@
 <div class="album py-5 bg-body-tertiary">
   <script>
     function confirmDelete() {
-      return confirm("Are you sure you want to delete the order?");
+      return confirm("Are you sure you want to delete this order?");
     }
 
   </script>

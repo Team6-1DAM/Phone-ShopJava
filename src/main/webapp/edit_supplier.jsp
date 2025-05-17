@@ -10,7 +10,7 @@
 
 <%
     if ((currentSession.getAttribute("role") == null) || (!currentSession.getAttribute("role").equals("admin"))) {
-        response.sendRedirect("/supplier/login.jsp");
+        response.sendRedirect("/phone_shop/login.jsp");
     }
 
     String action;
@@ -19,8 +19,8 @@
     System.out.println("Supplier id :" + supplierId);
 
 
-    if (supplier != null) {
-        action = "Update";
+    if (supplierId != null) {
+        action = "Modificar";
         Database database = new Database();
         try {
             database.connect();
@@ -34,7 +34,7 @@
             throw new RuntimeException(e);
         }
     } else {
-        action = "Sign In";
+        action = "Registrar";
     }
 
 %>
@@ -87,32 +87,32 @@
         <form class="row g-2 p-5" id="shelter-form" method="post" enctype="multipart/form-data">
             <h1 class="h3 mb-3 fw-normal"><%=action%> Supplier</h1>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="name" class="form-control" placeholder="Dog Id"
+                <input type="text" id="floatingTextarea" name="name" class="form-control" placeholder="Name"
                        value="<%=supplier != null ? supplier.getSupplier_name() : ""%>">
                 <label for="floatingTextarea">Name Supplier</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="address" class="form-control" placeholder="User Id"
+                <input type="text" id="floatingTextarea" name="address" class="form-control" placeholder="Address"
                        value="<%=supplier != null ? supplier.getAddress() : ""%>">
-                <label for="floatingTextarea">Direccion</label>
+                <label for="floatingTextarea">Address</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="city" class="form-control" placeholder="Shelter Date"
+                <input type="text" id="floatingTextarea" name="city" class="form-control" placeholder="City"
                        value="<%=supplier != null ? supplier.getCity() : ""%>">
-                <label for="floatingTextarea">Ciudad</label>
+                <label for="floatingTextarea">City</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="number" class="form-control" placeholder="Aceptado"
+                <input type="text" id="floatingTextarea" name="number" class="form-control" placeholder="Phone Number"
                        value="<%=supplier != null ? supplier.getTel() : ""%>">
-                <label for="floatingTextarea">Telefono</label>
+                <label for="floatingTextarea">Phone Number</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="date" id="floatingTextarea" name="foundation_date" class="form-control" placeholder="Donation"
+                <input type="date" id="floatingTextarea" name="foundation_date" class="form-control" placeholder="Zip code"
                        value="<%=supplier != null ? supplier.getZip_code(): ""%>">
                 <label for="floatingTextarea">Zip Code</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="rating" class="form-control" placeholder="Notes"
+                <input type="text" id="floatingTextarea" name="rating" class="form-control" placeholder="Email"
                        value="<%=supplier != null ? supplier.getEmail() : ""%>">
                 <label for="floatingTextarea">Email</label>
             </div>
@@ -120,13 +120,13 @@
 
 
             <div class="input-group mb-3">
-                <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Guardar">
+                <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Save">
             </div>
 
             <input type="hidden" name="action" value="<%=action%>">
 
             <%
-                if (action.equals("Modify")) {
+                if (action.equals("Modificar")) {
             %>
             <input type="hidden" name="id" value="<%=Integer.parseInt(supplierId)%>">
             <%

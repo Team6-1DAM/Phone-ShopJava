@@ -53,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
 
         } catch (SQLException sqle) {
             try {
-                response.getWriter().println("No se ha podido conectar con la base de datos");
+                response.getWriter().println("Error connecting to the database");
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }

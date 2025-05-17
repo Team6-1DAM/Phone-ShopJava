@@ -73,16 +73,16 @@ public class EditUserServlet extends HttpServlet {
             if (done) {
                 response.getWriter().print("ok");
             } else {
-                response.getWriter().print("No se ha podido guardar el usuario");
+                response.getWriter().print("Impossible to save the user changes");
             }
         } catch (SQLException sqle) {
-            response.getWriter().println("No se ha podido conectar con la base de datos");
+            response.getWriter().println("Error connecting to the database");
             sqle.printStackTrace();
         } catch (ClassNotFoundException cnfe) {
-            response.getWriter().println("No se ha podido cargar el driver de la base de datos");
+            response.getWriter().println("Error charging the driver");
             cnfe.printStackTrace();
         } catch (IOException ioe) {
-            response.getWriter().println("Error no esperado: " + ioe.getMessage());
+            response.getWriter().println("Unexpected error: " + ioe.getMessage());
             ioe.printStackTrace();
         } catch (Exception e) {
             response.getWriter().println("Error: " + e.getMessage());
@@ -93,13 +93,13 @@ public class EditUserServlet extends HttpServlet {
     private boolean validate(HttpServletRequest request) {
         errors = new ArrayList<>();
         if (request.getParameter("username").isEmpty()) {
-            errors.add("El usuario es un campo obligatorio");
+            errors.add("Username is required");
         }
         if ((request.getParameter("password").isEmpty())) {
-            errors.add("Las contraseña esta vacia");
+            errors.add("Password is required");
         }
         if ((!request.getParameter("password").equals(request.getParameter("passwordCheck")))) {
-            errors.add("Las contraseñas no coinciden");
+            errors.add("Username and password don't match");
         }
 
         return errors.isEmpty();
