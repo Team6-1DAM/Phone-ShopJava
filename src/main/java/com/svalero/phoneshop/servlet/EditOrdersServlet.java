@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet("/edit_orders")
-@MultipartConfig
+
 public class EditOrdersServlet extends HttpServlet {
 
         private ArrayList<String> errors;

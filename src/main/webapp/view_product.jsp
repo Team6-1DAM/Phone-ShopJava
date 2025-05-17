@@ -71,7 +71,9 @@
 </div>
 
 <%
-} catch (ProductNotFoundException dnfe) {
+
+} catch (ProductNotFoundException pnfe) {
+
 %>
 <%@ include file="includes/product_not_found.jsp"%>
 <%

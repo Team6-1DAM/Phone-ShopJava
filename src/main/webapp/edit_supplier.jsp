@@ -109,6 +109,7 @@
                 <label for="floatingTextarea">Phone Number</label>
             </div>
             <div class="form-floating col-md-6">
+
                 <input type="text" id="floatingTextarea" name="zip_code" class="form-control" placeholder="Zip Code"
 
                        value="<%=supplier != null ? supplier.getZip_code(): ""%>">

@@ -1,5 +1,6 @@
 package com.svalero.phoneshop.servlet;
 
+
 import com.svalero.phoneshop.dao.UserDao;
 import com.svalero.phoneshop.dao.UserDaoImpl;
 import com.svalero.phoneshop.database.Database;
@@ -8,17 +9,15 @@ import com.svalero.phoneshop.model.User;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet("/edit_admin_user")
 
+@WebServlet("/edit_admin_user")
+@MultipartConfig
 public class EditAdminUserServlet extends HttpServlet {
 
     private ArrayList<String> errors;
@@ -29,7 +28,7 @@ public class EditAdminUserServlet extends HttpServlet {
         HttpSession currentSession = request.getSession();
 
         if (currentSession.getAttribute("role") == null || !(currentSession.getAttribute("role").equals("admin"))) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("/shelter/login.jsp");
             return;
         }
 
@@ -46,6 +45,8 @@ public class EditAdminUserServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String city = request.getParameter("city");
         String birth_date = request.getParameter("birth_date");
+        String canAdopt = request.getParameter("canAdopt");
+        String rating = request.getParameter("rating");
         String role = request.getParameter("role");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -60,7 +61,7 @@ public class EditAdminUserServlet extends HttpServlet {
             User user = new User();
 
 
-            user.setId(Integer.parseInt(request.getParameter("user_id")));
+            user.setId(Integer.parseInt(request.getParameter("id")));
             user.setName(name);
             user.setEmail(email);
             user.setPhone(Integer.parseInt(phone));

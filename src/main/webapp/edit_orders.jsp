@@ -43,7 +43,7 @@
 
   String productImage;
   if (product == null) {
-    productImage = "default.jpg";
+    productImage = "no_image.jpg";
   } else {
     productImage = product.getImage();
   }

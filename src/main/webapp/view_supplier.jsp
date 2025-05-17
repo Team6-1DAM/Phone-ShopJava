@@ -21,8 +21,10 @@
 <%
   int supplierId = Integer.parseInt(request.getParameter("supplier_id"));
   Database database = new Database();
+
   database.connect();
   SupplierDao supplierDao = new SupplierDaoImpl(database.getConnection());
+
   try {
       Supplier supplier = null;
       try {
@@ -35,7 +37,9 @@
   <div class="card" style="width: 50rem;">
     <div class="card-body">
       <h5 class="card-title fw-bold"><%= supplier.getSupplier_name() %></h5>
+
       <p class="card-text fw-normal"><%= supplier.getCity() %> <small class="fw-light fst-italic"> <%= supplier.getZip_code()%></small></p>
+
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Tel: <%= supplier.getTel() %></li>
@@ -47,11 +51,13 @@
     </ul>
     <div class="card-body">
       <%
+
         if (role.equals("admin")) {
       %>
       <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
       <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-warning">Edit</a>
       <a onclick="return confirmDelete()" href="delete_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-danger">Delete</a>
+
       </div>
       <%
       } else {

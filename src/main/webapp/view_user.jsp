@@ -51,7 +51,7 @@
             <%
             } else if (role.equals("admin")) {
             %>
-            <a href="edit_user.jsp?user_id=<%=user.getId()%>" class="btn btn-sm btn-warning">Edit</a>
+            <a href="edit_admin_user.jsp?user_id=<%=user.getId()%>" class="btn btn-sm btn-warning">Edit</a>
             <a onclick="return confirmDelete()" href="delete_user?user_id=<%=user.getId()%>" class="btn btn-sm btn-danger">Delete</a>
             <%
             } else {

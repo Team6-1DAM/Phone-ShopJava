@@ -15,6 +15,8 @@ public class LogoutServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession currentSession = request.getSession();
         currentSession.invalidate();
+
         response.sendRedirect("/phone_shop");
+
     }
 }

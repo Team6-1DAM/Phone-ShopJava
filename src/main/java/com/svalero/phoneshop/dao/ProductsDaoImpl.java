@@ -56,7 +56,7 @@ public class ProductsDaoImpl implements ProductsDao{
             return getAll();
         }
 
-        String sql = "SELECT * FROM products WHERE name LIKE ? OR description LIKE ?";
+        String sql = "SELECT * FROM products WHERE product_name LIKE ? OR description LIKE ?";
         return launchQuery(sql, search);
     }
 

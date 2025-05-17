@@ -2,5 +2,10 @@
 <web-app>
 
     <display-name>Phone_shop WebApp</display-name>
+    <context-param>
+        <description>Ruta para almacenar las imágenes de los perros</description>
+        <param-name>imagePath</param-name>
+        <param-value>C:/Users/S2-PC00/Desktop/apache-tomcat-9.0.105/phoneshop_images</param-value>
+    </context-param>
 
 </web-app>
