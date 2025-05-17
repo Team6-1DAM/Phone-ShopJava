@@ -11,7 +11,7 @@
 
 <script>
   function confirmDelete() {
-    return confirm("Are you sure you want to remove this supplier?");
+    return confirm("Are you sure you want to delete this supplier?");
   }
 </script>
 
@@ -21,12 +21,10 @@
 <%
   int supplierId = Integer.parseInt(request.getParameter("supplier_id"));
   Database database = new Database();
-    try {
-        database.connect();
-    } catch (ClassNotFoundException | SQLException e) {
-        throw new RuntimeException(e);
-    }
-    SupplierDao supplierDao = new SupplierDaoImpl(database.getConnection());
+
+  database.connect();
+  SupplierDao supplierDao = new SupplierDaoImpl(database.getConnection());
+
   try {
       Supplier supplier = null;
       try {
@@ -39,33 +37,35 @@
   <div class="card" style="width: 50rem;">
     <div class="card-body">
       <h5 class="card-title fw-bold"><%= supplier.getSupplier_name() %></h5>
-      <p class="card-text fw-normal"><%= supplier.getCity() %> <small class="fw-light fst-italic"> <%= supplier.getCountry()%></small></p>
+
+      <p class="card-text fw-normal"><%= supplier.getCity() %> <small class="fw-light fst-italic"> <%= supplier.getZip_code()%></small></p>
+
     </div>
     <ul class="list-group list-group-flush">
+      <li class="list-group-item">Tel: <%= supplier.getTel() %></li>
+      <li class="list-group-item">Address   : <%= supplier.getAddress() %></li>
       <li class="list-group-item">City   : <%= supplier.getCity() %></li>
-      <li class="list-group-item">Address: <%= supplier.getAddress() %></li>
-      <li class="list-group-item">Website: <%= supplier.getWebsite() %></li>
+      <li class="list-group-item">Country: <%= supplier.getCountry() %></li>
+      <li class="list-group-item">Zip Code: <%= supplier.getZip_code() %></li>
+
     </ul>
     <div class="card-body">
       <%
-        if (role.equals("user")) {
-      %>
-      <a href="#" type="button" class="btn btn-primary disabled">Contact</a>
-      <%
-      } else if (role.equals("admin")) {
+
+        if (role.equals("admin")) {
       %>
       <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
       <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-warning">Edit</a>
-      <a onclick="return confirmDelete()" href="delete_supplier?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-danger">Delete</a>
+      <a onclick="return confirmDelete()" href="delete_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-danger">Delete</a>
+
       </div>
       <%
       } else {
       %>
-      <a href="login.jsp" type="button" class="btn btn-warning">Contactar</a>
+      <a href="login.jsp" type="button" class="btn btn-warning">Main page</a>
       <%
         }
       %>
-
     </div>
   </div>
 </div>

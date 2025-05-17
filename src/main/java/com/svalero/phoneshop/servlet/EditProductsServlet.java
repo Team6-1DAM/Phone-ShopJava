@@ -19,8 +19,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.UUID;
 
-@WebServlet("/edit_products")
-@MultipartConfig
+
+@WebServlet("/edit_product")
+
+
 public class EditProductsServlet extends HttpServlet {
 
     private ArrayList<String> errors;
@@ -95,16 +97,16 @@ public class EditProductsServlet extends HttpServlet {
             if (done) {
                 response.getWriter().print("ok");
             } else {
-                response.getWriter().print("We couldn't save the product");
+                response.getWriter().print("Impossible to save the product changes");
             }
         } catch (SQLException sqle) {
-            response.getWriter().println("Cannot connect to the database");
+            response.getWriter().println("Error connecting to the database");
             sqle.printStackTrace();
         } catch (ClassNotFoundException cnfe) {
-            response.getWriter().println("Couldnt load the database driver");
+            response.getWriter().println("Error charging the driver");
             cnfe.printStackTrace();
         } catch (IOException ioe) {
-            response.getWriter().println("Unknown error: " + ioe.getMessage());
+            response.getWriter().println("Unexpected error: " + ioe.getMessage());
             ioe.printStackTrace();
         } catch (Exception e) {
             response.getWriter().println("Error: " + e.getMessage());

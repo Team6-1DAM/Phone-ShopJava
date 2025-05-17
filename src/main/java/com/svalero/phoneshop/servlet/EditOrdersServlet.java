@@ -74,16 +74,16 @@ public class EditOrdersServlet extends HttpServlet {
                 if (done) {
                     response.getWriter().print("ok");
                 } else {
-                    response.getWriter().print("No se ha podido guardar el producto");
+                    response.getWriter().print("Impossible to save the order changes");
                 }
             } catch (SQLException sqle) {
-                response.getWriter().println("No se ha podido conectar con la base de datos");
+                response.getWriter().println("Error connecting to the database");
                 sqle.printStackTrace();
             } catch (ClassNotFoundException cnfe) {
-                response.getWriter().println("No se ha podido cargar el driver de la base de datos");
+                response.getWriter().println("Error charging the driver");
                 cnfe.printStackTrace();
             } catch (IOException ioe) {
-                response.getWriter().println("Error no esperado: " + ioe.getMessage());
+                response.getWriter().println("Unexpected error: " + ioe.getMessage());
                 ioe.printStackTrace();
             } catch (Exception e) {
                 response.getWriter().println("Error: " + e.getMessage());
@@ -94,10 +94,10 @@ public class EditOrdersServlet extends HttpServlet {
         private boolean validate(HttpServletRequest request) {
             errors = new ArrayList<>();
             if (request.getParameter("id_product").isEmpty()) {
-                errors.add("El ID del producto es un campo obligatorio");
+                errors.add("ID Product cannot be empty");
             }
             if ((request.getParameter("id_user").isEmpty())) {
-                errors.add("El ID del usuario es un campo obligatorio");
+                errors.add("ID User cannot be empty");
             }
             return errors.isEmpty();
         }

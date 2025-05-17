@@ -17,7 +17,7 @@
 
 <script>
   function confirmDelete() {
-    return confirm("Are you sure you want to remove this product?");
+    return confirm("Are you sure you want to delete this product?");
   }
 </script>
 
@@ -52,8 +52,8 @@
             <%
             } else if (role.equals("admin")) {
             %>
-            <a href="edit_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-warning">Editar</a>
-            <a onclick="return confirmDelete()" href="delete_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-danger">Eliminar</a>
+            <a href="edit_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-warning">Edit</a>
+            <a onclick="return confirmDelete()" href="delete_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-danger">Delete</a>
             <%
             } else {
             %>

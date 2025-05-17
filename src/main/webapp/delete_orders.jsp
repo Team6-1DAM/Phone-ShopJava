@@ -53,7 +53,7 @@
             }
           },
           404: function(response) {
-            $("#result").html("<div class='alert alert-danger' role='alert'>Error al enviar los datos</div>");
+            $("#result").html("<div class='alert alert-danger' role='alert'>Error sending data</div>");
           },
           500: function(response) {
             console.log(response);

@@ -56,7 +56,7 @@
       %>
       <div class="col">
         <div class="card shadow-sm">
-          <img class="img-thumbnail" src="/phone_shop_images/<%= products.getImage() %>" style="width: 100%; height: 225px; object-fit: cover;">
+          <img class="img-thumbnail" src="/phoneshop_images/<%= products.getImage() %>" style="width: 100%; height: 225px; object-fit: cover;">
           <div class="card-body">
             <h4 class="card-text"><%= orders.getOrder_date() %></h4>
             <p class="card-text">Phones: <%= products.getProduct_name() %></p>

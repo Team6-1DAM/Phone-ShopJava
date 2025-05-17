@@ -12,7 +12,7 @@
         type: "POST",
         data: formValue,
         success: function(response) {
-          if (response.trim() === "ok") {
+          if (response === "ok") {
             window.location.href = "/phone_shop"; // Adjust this path if needed
           } else {
             $("#result").html(
@@ -70,7 +70,7 @@
       </div>
 
       <div class="input-group mb-3">
-        <input class="btn btn-primary" type="submit" value="Registrarse">
+        <input class="btn btn-primary" type="submit" value="Sign in">
       </div>
 
       <div class="input-group mb-3">

@@ -10,7 +10,7 @@
 
 <%
   if ((currentSession.getAttribute("role") == null)) {
-    response.sendRedirect("/supplier/login.jsp");
+    response.sendRedirect("/phone_shop/login.jsp");
   }
 
   String action = null;
