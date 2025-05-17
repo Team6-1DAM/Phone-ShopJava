@@ -65,33 +65,6 @@ public class OrderDaoImpl implements OrderDao {
         return launchQuery(sql, search);
     }
 
-    @Override
-    public Orders getByUserId(int userId) throws SQLException, OrderNotFoundException {
-        String sql = "SELECT * FROM orders WHERE id_user = ?";
-
-        PreparedStatement statement;
-        ResultSet result;
-
-        statement = connection.prepareStatement(sql);
-        statement.setInt(1, userId);
-        result = statement.executeQuery();
-        if (!result.next()) {
-            throw new OrderNotFoundException();
-        }
-
-        Orders orders = new Orders();
-        orders.setId(result.getInt("id"));
-        orders.setId_product(result.getInt("id_product"));
-        orders.setId_user(result.getInt("id_user"));
-        orders.setOrder_date(result.getDate("order_date"));
-        orders.setTotal_price(result.getDouble("total_price"));
-        orders.setUsername(result.getString("username"));
-        orders.setNotes(result.getString("notes"));
-
-        statement.close();
-
-        return orders;
-    }
 
     @Override
     public int getOrdersByUserId(int userId) throws SQLException {
@@ -111,90 +84,6 @@ public class OrderDaoImpl implements OrderDao {
     }
 
 
-    @Override
-    public Orders getByProductsId(int productId) throws SQLException, OrderNotFoundException {
-        String sql = "SELECT * FROM orders WHERE id_product = ?";
-
-        PreparedStatement statement;
-        ResultSet result;
-
-        statement = connection.prepareStatement(sql);
-        statement.setInt(1, productId);
-        result = statement.executeQuery();
-        if (!result.next()) {
-            throw new OrderNotFoundException();
-        }
-
-        Orders orders = new Orders();
-        orders.setId(result.getInt("id"));
-        orders.setId_product(result.getInt("id_product"));
-        orders.setId_user(result.getInt("id_user"));
-        orders.setOrder_date(result.getDate("order_date"));
-        orders.setTotal_price(result.getDouble("total_price"));
-        orders.setUsername(result.getString("username"));
-        orders.setNotes(result.getString("notes"));
-
-        statement.close();
-
-        return orders;
-    }
-
-    @Override
-    public Orders getBySupplierId(int userId) throws SQLException, OrderNotFoundException {
-        String sql = "SELECT * FROM orders WHERE id_user = ?";
-
-        PreparedStatement statement;
-        ResultSet result;
-
-        statement = connection.prepareStatement(sql);
-        statement.setInt(1, userId);
-        result = statement.executeQuery();
-        if (!result.next()) {
-            throw new OrderNotFoundException();
-        }
-
-        Orders orders = new Orders();
-        orders.setId(result.getInt("id"));
-        orders.setId_product(result.getInt("id_product"));
-        orders.setId_user(result.getInt("id_user"));
-        orders.setOrder_date(result.getDate("order_date"));
-        orders.setTotal_price(result.getDouble("total_price"));
-        orders.setUsername(result.getString("username"));
-        orders.setNotes(result.getString("notes"));
-
-        statement.close();
-
-        return orders;
-    }
-
-    @Override
-    public Orders getByDateRange(Date startDate, Date endDate) throws SQLException, OrderNotFoundException {
-        ArrayList<Orders> orderList = new ArrayList<>();
-        String sql = "SELECT * FROM orders WHERE order_date BETWEEN ? AND ?";
-
-        PreparedStatement statement;
-        ResultSet result;
-
-        statement = connection.prepareStatement(sql);
-        statement.setDate(1, new java.sql.Date(startDate.getTime()));
-        statement.setDate(2, new java.sql.Date(endDate.getTime()));
-        result = statement.executeQuery();
-        if (!result.next()) {
-            throw new OrderNotFoundException();
-        }
-
-        Orders orders = new Orders();
-        orders.setId(result.getInt("id"));
-        orders.setId_product(result.getInt("id_product"));
-        orders.setId_user(result.getInt("id_user"));
-        orders.setOrder_date(result.getDate("order_date"));
-        orders.setTotal_price(result.getDouble("total_price"));
-        orders.setUsername(result.getString("username"));
-        orders.setNotes(result.getString("notes"));
-
-        statement.close();
-        return orders;
-    }
 
     @Override
     public boolean modify(Orders orders) throws SQLException {

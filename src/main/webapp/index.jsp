@@ -39,10 +39,16 @@
 
                 List<Products> productList = productDao.getAll(search);
                 for (Products products : productList) {
+                    String productImage;
+                    if (products.getImage() == null){
+                        productImage = "no_image.jpg";
+                    } else {
+                        productImage = products.getImage();
+                    }
             %>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img class="img-thumbnail" src="/phoneshop_images/<%= products.getImage() %>" style="width: 100%; height: 225px; object-fit: cover;">
+                    <img class="img-thumbnail" src="/phoneshop_images/<%= productImage %>" style="width: 100%; height: 225px; object-fit: cover;">
                     <div class="card-body">
                         <h4 class="card-text"><%= products.getProduct_name() %></h4>
                         <p class="card-text"><%= products.getDescription() %></p>

@@ -6,6 +6,7 @@ import com.svalero.phoneshop.database.Database;
 import com.svalero.phoneshop.model.Supplier;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet("/edit_supplier")
-
+@MultipartConfig
 public class EditSupplierServlet extends HttpServlet {
 
     private ArrayList<String> errors;
@@ -30,10 +31,10 @@ public class EditSupplierServlet extends HttpServlet {
             response.sendRedirect("login.jsp");
         }
 
-        if (!validate(request)) {
-            response.getWriter().println(errors.toString());
-            return;
-        }
+//        if (!validate(request)) {
+//            response.getWriter().println(errors.toString());
+//            return;
+//        }
 
         String action = request.getParameter("action");
 

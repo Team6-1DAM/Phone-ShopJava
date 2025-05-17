@@ -52,9 +52,9 @@
 </div>
 
 <%
-} catch (UserNotFoundException dnfe) {
+} catch (UserNotFoundException unfe) {
 %>
-<%@ include file="includes/product_not_found.jsp"%>
+<%@ include file="includes/user_not_found.jsp"%>
 <%
   }
 %>

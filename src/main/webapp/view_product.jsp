@@ -32,10 +32,16 @@
         ProductsDao productsDao = new ProductsDaoImpl(database.getConnection());
         try {
           Products products = productsDao.get(productId);
+          String productImage;
+          if (products.getImage() == null){
+            productImage = "no_image.jpg";
+          } else {
+            productImage = products.getImage();
+          }
       %>
       <div class="container d-flex justify-content-center">
         <div class="card" style="width: 50rem;">
-          <img class="img-thumbnail" src="/phoneshop_images/<%= products.getImage() %>" style="width: 100%; height: auto">
+          <img class="img-thumbnail" src="/phoneshop_images/<%= productImage %>" style="width: 100%; height: auto">
           <div class="card-body">
             <h5 class="card-title"><%= products.getProduct_name() %></h5>
             <p class="card-text"><%= products.getDescription() %></p>

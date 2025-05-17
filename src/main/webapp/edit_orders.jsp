@@ -6,6 +6,7 @@
 <%@ page import="com.svalero.phoneshop.model.Products" %>
 <%@ page import="com.svalero.phoneshop.exception.OrderNotFoundException" %>
 <%@ page import="com.svalero.phoneshop.dao.*" %>
+<%@ page import="com.svalero.phoneshop.exception.ProductNotFoundException" %>
 <%@include file="includes/header.jsp"%>
 <%@include file="includes/navbar.jsp"%>
 
@@ -33,7 +34,11 @@
     try {
       order = orderDao.getById(Integer.parseInt(orderId));
       ProductsDao productsDao = new ProductsDaoImpl(database.getConnection());
-      product = productsDao.get(order.getId_product());
+        try {
+            product = productsDao.get(order.getId_product());
+        } catch (ProductNotFoundException pnfe) {
+            throw new RuntimeException(pnfe);
+        }
     } catch (SQLException | OrderNotFoundException e) {
       throw new RuntimeException(e);
     }
@@ -46,6 +51,13 @@
     productImage = "no_image.jpg";
   } else {
     productImage = product.getImage();
+  }
+
+  String translate;
+  if (action.contentEquals("Registrar")) {
+    translate = "Register";
+  } else {
+    translate = "Modify";
   }
 
 %>
@@ -98,7 +110,7 @@
   <div class="card" style="width: 50rem;">
     <img class="img-thumbnail" src="/phoneshop_images/<%= productImage%>" style="width: 100%; height: auto;">
     <form class="row g-2 p-5" id="order-form" method="post" enctype="multipart/form-data">
-      <h1 class="h3 mb-3 fw-normal"><%=action%> Order </h1>
+      <h1 class="h3 mb-3 fw-normal"><%=translate%> Order </h1>
       <div class="form-floating col-md-6">
         <input type="text" id="floatingTextarea" name="id_product" class="form-control" placeholder="Product Id"
                value="<%=order != null ? order.getId_product() : ""%>">
@@ -117,6 +129,16 @@
       <div class="form-floating col-md-6">
         <input type="text" id="floatingTextarea" name="notes" class="form-control" placeholder="Notes"
                value="<%=order != null ? order.getNotes() : ""%>">
+        <label for="floatingTextarea">Notas</label>
+      </div>
+      <div class="form-floating col-md-6">
+        <input type="hidden" id="floatingTextarea" name="username" class="form-control" placeholder="Notes"
+               value="<%=order != null ? "a" : "a"%>">
+        <label for="floatingTextarea">Notas</label>
+      </div>
+      <div class="form-floating col-md-6">
+        <input type="hidden" id="floatingTextarea" name="total_price" class="form-control" placeholder="Notes"
+               value="<%=order != null ? 11.2 : 11.2 %>">
         <label for="floatingTextarea">Notas</label>
       </div>
 
@@ -189,5 +211,5 @@
     </form>
   </div>
 </div>
-
+<%@ include file="includes/product_not_found.jsp"%>
 <%@include file="includes/footer.jsp"%>

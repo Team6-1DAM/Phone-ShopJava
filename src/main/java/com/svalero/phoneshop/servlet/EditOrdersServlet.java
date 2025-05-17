@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet("/edit_orders")
-
+@MultipartConfig
 public class EditOrdersServlet extends HttpServlet {
 
         private ArrayList<String> errors;
@@ -93,12 +93,7 @@ public class EditOrdersServlet extends HttpServlet {
 
         private boolean validate(HttpServletRequest request) {
             errors = new ArrayList<>();
-            if (request.getParameter("id_product").isEmpty()) {
-                errors.add("ID Product cannot be empty");
-            }
-            if ((request.getParameter("id_user").isEmpty())) {
-                errors.add("ID User cannot be empty");
-            }
+
             return errors.isEmpty();
         }
     }
