@@ -1,0 +1,35 @@
+version: "3.4"
+name: phoneshop
+services:
+  mariadb:
+    image: mariadb:11.3.2
+    container_name: phoneshop-db
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    networks:
+      - network1
+  app:
+    image: phoneshop
+    container_name: phoneshopcon
+    env_file: ./.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb
+    restart: on-failure
+    networks:
+      - network1
+volumes:
+  db:
+networks:
+  network1:
+    driver: bridge
