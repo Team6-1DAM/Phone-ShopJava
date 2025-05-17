@@ -20,7 +20,7 @@ Es aqui donde se visualiza nuestro aplicativo en el frontend, y donde ya podemos
   username: miguel, password: m
 Desde estos ussuarios se puede realizar toda la operativa de la aplicacion web.
 
-Tambien se ha dockerizado por completo el proyecto, realizando un docker-comopose en el que hay una imagen de la BD y de la aplicación, corriendo en el equipo sin necesidad de tener maven, tomcat y mariadb instalado, simplemente hay que ejecutar el docker-compose.
+Tambien se ha dockerizado por completo el proyecto, realizando un docker-comopose en el que hay una imagen de la BD y de la aplicación, corriendo en el equipo sin necesidad de tener maven, tomcat ni mariadb instalados, simplemente hay que ejecutar el docker-compose ya preparado, por lo que unico que se tiene que tener instalado es el docker-desktop.
 
 
 
