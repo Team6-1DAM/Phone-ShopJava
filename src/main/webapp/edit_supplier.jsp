@@ -10,7 +10,7 @@
 
 <%
     if ((currentSession.getAttribute("role") == null) || (!currentSession.getAttribute("role").equals("admin"))) {
-        response.sendRedirect("/supplier/login.jsp");
+        response.sendRedirect("/phone_shop/login.jsp");
     }
 
     String action;
@@ -92,37 +92,41 @@
                 <label for="floatingTextarea">Name Supplier</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="address" class="form-control" placeholder="Av Cesar augusto"
+
+                <input type="text" id="floatingTextarea" name="address" class="form-control" placeholder="Address"
                        value="<%=supplier != null ? supplier.getAddress() : ""%>">
-                <label for="floatingTextarea">Adreess</label>
+                <label for="floatingTextarea">Address</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="city" class="form-control" placeholder="Zaragoza"
+                <input type="text" id="floatingTextarea" name="city" class="form-control" placeholder="City"
                        value="<%=supplier != null ? supplier.getCity() : ""%>">
                 <label for="floatingTextarea">City</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="tel" class="form-control" placeholder="+346675874856"
+
+                <input type="text" id="floatingTextarea" name="tel" class="form-control" placeholder="Phone Number"
                        value="<%=supplier != null ? supplier.getTel() : ""%>">
-                <label for="floatingTextarea">Tel</label>
+                <label for="floatingTextarea">Phone Number</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="zip_code" class="form-control" placeholder="50012"
+                <input type="text" id="floatingTextarea" name="zip_code" class="form-control" placeholder="Zip Code"
+
                        value="<%=supplier != null ? supplier.getZip_code(): ""%>">
                 <label for="floatingTextarea">Zip Code</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="country" class="form-control" placeholder="Spain"
+
+                <input type="text" id="floatingTextarea" name="country" class="form-control" placeholder="Country"
                        value="<%=supplier != null ? supplier.getCountry() : ""%>">
                 <label for="floatingTextarea">Country</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="email" class="form-control" placeholder="supplier@supplier.es"
+                <input type="text" id="floatingTextarea" name="email" class="form-control" placeholder="Email"
                        value="<%=supplier != null ? supplier.getEmail(): ""%>">
                 <label for="floatingTextarea">EMail</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="website" class="form-control" placeholder="supplier.com"
+                <input type="text" id="floatingTextarea" name="website" class="form-control" placeholder="Website"
                        value="<%=supplier != null ? supplier.getWebsite() : ""%>">
                 <label for="floatingTextarea">Website</label>
             </div>
@@ -136,7 +140,7 @@
             <input type="hidden" name="action" value="<%=action%>">
 
             <%
-                if (action.equals("Modify")) {
+                if (action.equals("Modificar")) {
             %>
             <input type="hidden" name="id" value="<%=Integer.parseInt(supplierId)%>">
             <%

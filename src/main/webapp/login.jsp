@@ -32,19 +32,19 @@
     <form>
       <h1 class="h3 mb-3 fw-normal">Log in</h1>
       <div class="input-group mb-3">
-        <input type="text" name="username" class="form-control" placeholder="Usuario">
+        <input type="text" name="username" class="form-control" placeholder="Username">
       </div>
 
       <div class="input-group mb-3">
-        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+        <input type="password" name="password" class="form-control" placeholder="Password">
       </div>
 
       <div class="input-group mb-3">
-        <input class="btn btn-primary" type="submit" value="Iniciar sesión">
+        <input class="btn btn-primary" type="submit" value="Login">
       </div>
 
       <div class="input-group mb-3">
-        ¿No tienes usuario? <a href="register.jsp"> Regístrate aqui</a>
+        You don't have an user yet?  <a href="register.jsp"> Sign up here</a>
       </div>
 
       <div id="result"></div>

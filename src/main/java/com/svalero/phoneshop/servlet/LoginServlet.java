@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             response.getWriter().print("ok");
         } catch (SQLException sqle) {
             try {
-                response.getWriter().println("No se ha podido conectar con la base de datos");
+                response.getWriter().println("Error connecting to the database");
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
             ioe.printStackTrace();
         } catch (UserNotFoundException unfe) {
             try {
-                response.getWriter().println("Usuario/contraseña incorrectos");
+                response.getWriter().println("Username or password is incorrect");
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }

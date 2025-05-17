@@ -86,11 +86,11 @@
             }
           },
           404: function(response) {
-            $("#result").html("<div class='alert alert-danger' role='alert'>Error al enviar los datos</div>");
+            $("#result").html("<div class='alert alert-danger' role='alert'>Error sending data</div>");
           },
           500: function(response) {
             console.log(response);
-            $("#result").html("<div class='alert alert-danger' role='alert'>" + response.toString() + "</div>");
+            $("#result").html("<div class='alert alert-danger' role='alert'>" + response.responseText + "</div>");
           }
         }
       });
@@ -112,22 +112,22 @@
         <label for="floatingTextarea">Supplier Id</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="product_name" class="form-control" placeholder="Nombre"
+        <input type="text" id="floatingTextarea" name="product_name" class="form-control" placeholder="Name"
                value="<%=products != null ? products.getProduct_name() : ""%>">
         <label for="floatingTextarea">Name</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="description" class="form-control" placeholder="raza"
+        <input type="text" id="floatingTextarea" name="description" class="form-control" placeholder="Description"
                value="<%=products != null ? products.getDescription() : ""%>">
         <label for="floatingTextarea">Description</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="sale¨_price" class="form-control" placeholder="genero"
+        <input type="text" id="floatingTextarea" name="sale¨_price" class="form-control" placeholder="Sale Price"
                value="<%=products != null ? products.getSale_price() : ""%>">
         <label for="floatingTextarea">Sale Price</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="date" id="floatingTextarea" name="release_date" class="form-control" placeholder="fecha de nacimiento"
+        <input type="date" id="floatingTextarea" name="release_date" class="form-control" placeholder="Release Date"
                value="<%=products != null ? products.getRelease_date() : ""%>">
         <label for="floatingTextarea">Release Date</label>
       </div>
@@ -142,14 +142,14 @@
         }
       %>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="stocks_units" class="form-control" placeholder="Weight"
+        <input type="text" id="floatingTextarea" name="stocks_units" class="form-control" placeholder="Stock"
                value="<%=products != null ? products.isStocks_units() : ""%>">
         <label for="floatingTextarea">Is there stock?</label>
       </div>
 
 
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="product_status" class="form-control" placeholder="castrated"
+        <input type="text" id="floatingTextarea" name="product_status" class="form-control" placeholder="Status"
                value="<%=products != null ? products.getProduct_status() : ""%>">
         <label for="floatingTextarea">Status</label>
       </div>

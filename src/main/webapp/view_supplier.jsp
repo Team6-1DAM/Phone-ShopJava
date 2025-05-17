@@ -11,7 +11,7 @@
 
 <script>
   function confirmDelete() {
-    return confirm("Are you sure you want to remove this supplier?");
+    return confirm("Are you sure you want to delete this supplier?");
   }
 </script>
 
@@ -35,7 +35,7 @@
   <div class="card" style="width: 50rem;">
     <div class="card-body">
       <h5 class="card-title fw-bold"><%= supplier.getSupplier_name() %></h5>
-      <p class="card-text fw-normal"><%= supplier.getEmail() %> <small class="fw-light fst-italic"> <%= supplier.getWebsite()%></small></p>
+      <p class="card-text fw-normal"><%= supplier.getCity() %> <small class="fw-light fst-italic"> <%= supplier.getZip_code()%></small></p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Tel: <%= supplier.getTel() %></li>
@@ -47,24 +47,19 @@
     </ul>
     <div class="card-body">
       <%
-        if (role.equals("user")) {
-      %>
-      <a href="#" type="button" class="btn btn-primary disabled">Contact</a>
-      <%
-      } else if (role.equals("admin")) {
+        if (role.equals("admin")) {
       %>
       <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
-      <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-warning">Editar</a>
-      <a onclick="return confirmDelete()" href="delete_supplier?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-danger">Eliminar</a>
+      <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-warning">Edit</a>
+      <a onclick="return confirmDelete()" href="delete_supplier.jsp?supplier_id=<%= supplier.getId() %>" class="btn btn-sm btn-danger">Delete</a>
       </div>
       <%
       } else {
       %>
-      <a href="login.jsp" type="button" class="btn btn-warning">Contactar</a>
+      <a href="login.jsp" type="button" class="btn btn-warning">Main page</a>
       <%
         }
       %>
-
     </div>
   </div>
 </div>

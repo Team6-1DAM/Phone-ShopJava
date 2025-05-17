@@ -12,7 +12,7 @@
 
 <script>
   function confirmDelete() {
-    return confirm("¿Estás seguro de que quieres eliminar este proveedor?");
+    return confirm("Are you sure you want to delete this supplier?");
   }
 </script>
 
@@ -23,7 +23,7 @@
 <div class="album py-5 bg-body-tertiary">
   <div class="container mb-5">
     <form method="get" action="<%= request.getRequestURI() %>">
-      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" value="<%= search != null ? search : "" %>">
+      <input type="text" name="search" id="search" class="form-control" placeholder="Search" value="<%= search != null ? search : "" %>">
     </form>
   </div>
 
@@ -63,7 +63,7 @@
                  if (role.equals("admin")) {
                 %>
                 <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-warning">Modify</a>
-                <a onclick="return confirmDelete()" href="delete_supplier?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-danger">Eliminar</a>
+                <a onclick="return confirmDelete()" href="delete_supplier?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-danger">Delete</a>
                 <%
                   }
                 %>

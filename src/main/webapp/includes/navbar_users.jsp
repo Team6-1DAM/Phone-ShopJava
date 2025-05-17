@@ -12,7 +12,7 @@
       <div class="col-lg-6 col-md-8 mx-auto">
         <p>
           <a href="index.jsp" class="btn btn-info">View products</a>
-          <a href="order.jsp" class="btn btn-info">View orders</a>
+          <a href="orders.jsp" class="btn btn-info">View orders</a>
           <a href="supplier.jsp" class="btn btn-info">View suppliers</a>
         </p>
       </div>
