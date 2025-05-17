@@ -58,6 +58,8 @@ public class SupplierDaoImpl implements SupplierDao {
         supplier.setTel(result.getString("tel"));
         supplier.setCountry(result.getString("country"));
         supplier.setCity(result.getString("city"));
+        supplier.setAddress(result.getString("address"));
+        supplier.setZip_code(result.getString("zip_code"));
         supplier.setWebsite(result.getString("website"));
         supplier.setEmail(result.getString("email"));
 
@@ -131,6 +133,8 @@ public class SupplierDaoImpl implements SupplierDao {
             Supplier supplier = new Supplier();
             supplier.setId(result.getInt("id"));
             supplier.setSupplier_name(result.getString("supplier_name"));
+            supplier.setSupplier_name(result.getString("zip_code"));
+            supplier.setAddress(result.getString("address"));
             supplier.setTel(result.getString("tel"));
             supplier.setCountry(result.getString("country"));
             supplier.setCity(result.getString("city"));
