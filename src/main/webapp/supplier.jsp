@@ -63,7 +63,7 @@
                  if (role.equals("admin")) {
                 %>
                 <a href="edit_supplier.jsp?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-warning">Modify</a>
-                <a onclick="return confirmDelete()" href="delete_supplier.jsp?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-danger">Delete</a>
+                <a onclick="return confirmDelete()" href="delete_supplier?supplier_id=<%= supplier.getId()  %>" class="btn btn-sm btn-danger">Delete</a>
                 <%
                   }
                 %>

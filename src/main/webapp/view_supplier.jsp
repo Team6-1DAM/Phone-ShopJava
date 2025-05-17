@@ -38,9 +38,12 @@
       <p class="card-text fw-normal"><%= supplier.getCity() %> <small class="fw-light fst-italic"> <%= supplier.getZip_code()%></small></p>
     </div>
     <ul class="list-group list-group-flush">
+      <li class="list-group-item">Tel: <%= supplier.getTel() %></li>
+      <li class="list-group-item">Address   : <%= supplier.getAddress() %></li>
       <li class="list-group-item">City   : <%= supplier.getCity() %></li>
-      <li class="list-group-item">Address: <%= supplier.getAddress() %></li>
-      <li class="list-group-item">Website: <%= supplier.getWebsite() %></li>
+      <li class="list-group-item">Country: <%= supplier.getCountry() %></li>
+      <li class="list-group-item">Zip Code: <%= supplier.getZip_code() %></li>
+
     </ul>
     <div class="card-body">
       <%
@@ -57,7 +60,6 @@
       <%
         }
       %>
-
     </div>
   </div>
 </div>

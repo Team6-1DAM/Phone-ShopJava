@@ -98,63 +98,30 @@ VALUES('RetroMaC','+3497674767','Calle San Juan Bosco,8','50010','Zaragoza','Esp
 --
 --
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(1,'Commodore 64','Micrordenador de 8 bits de los 80, el micrordenado mas vendido en el mundo',180.50,1,'no_image.jpg',
-   '1982-01-02','Bueno con roces en la entrada de cartuchos');
+VALUES(1,'Nokia 3310','Strong Design',180.50,1,'nokia.jpg',
+   '2000-01-02','Brand New');
 
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(1,'Spectrum','Micrordenador de 8 bits de los 80, con mucho exito en Europa, Britanico',120.80,1,'no_image.jpg',
-       '1982-01-03','Decente, las letras de las teclas no se ven bien');
+VALUES(3,'Motorola RAZR V3',' Thin and Elegant',120.80,1,'motorola.jpg',
+       '2004-01-03','Upper part has got some scratches');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(1,'Amstrad CPC464','Micrordenador de 8 bits de los 80, con mucho exito en España, muy buen Basic',150,1,'no_image.jpg',
-       '1985-01-05','Buena, El cassete integrado falla a veces al leer');
+VALUES(1,'Blackberry 7290','Querty Keyboard',150,1,'blackberry.jpg',
+       '1985-01-05','Some Keys are not visible');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(2,'Sony MSX','Micrordenador de 8 bits de los 80, con mucho exito en Japon',198.80,1,'no_image.jpg',
-       '1984-01-04','Bueno, no se aprecian defectos');
+VALUES(2,'Iphone 11','Dual Camara',198.80,1,'iphone.jpg',
+       '1984-01-04','The movil camera is a little bit ... ');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(2,'Commodore Amiga 500','Micrordenador de 16 bits de los 80, ordenador con sistema de ventanas',201,1,'no_image.jpg',
-       '1985-06-01','Buena, la disquetera muestra algun error de lectura');
+VALUES(2,'Huawei P20','P series with fingerprint ',201,1,'huawey.jpg',
+       '1985-06-01','Good conditions');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(3,'PC 286 sin coprocesador matemático','Pc de 16 bits de finales de los 80, con 20MB de disco duro',129.99,1,'no_image.jpg',
-       '1988-05-15','Decente, el monitor de fosforo verde tarda encender');
+VALUES(3,'LG Chocolate','Slider style phone',129.99,1,'lg.jpg',
+       '1988-05-15','Fingerprint sometimes does not work');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(3,'PC 486 DX50','PC de principios de los 90,lleva coprocesador integrado 40MB de disco duro',139.99,1,'no_image.jpg',
-       '1993-01-01','Bueno, la carcasa esta un poco amarillenta');
+VALUES(3,'HTC ThunderBolt','4G LTE phone',139.99,1,'htc.jpg',
+       '1993-01-01','Hard to slide');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(3,'PC Pemtium I 133Mhz','Ordenador preparado para Windows 95',149.99,1,'no_image.jpg',
-       '1995-11-11','Bueno, no se aprecian defectos');
+VALUES(3,'Samsung S24 Ultra','IA phone',149.99,1,'samsung.jpg',
+       '1995-11-11','Screen a little bit scratched');
 INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(4,'PC Pemtium III','Ordenador preparado para Windows XP',159.99,1,'no_image.jpg',
-       '2001-12-03','Bueno, el lector CD-ROM da fallos de lectura');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(5,'Portatil ASUS Multimedia','Ordenador portatil para Windows 7, con un i7 de primera generacion',169.99,1,'no_image.jpg',
-       '2010-12-03','Bueno, la fuente de alimentacion externa recien cambiada');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(7,'PC torre Gaming personalizada','Ordenador gaming para Windows 10, con un i5 de octava generacion',269.99,1,'no_image.jpg',
-       '2017-11-05','Bueno, tiene 8GB de RAM y una GTX1060 de 6GB ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(7,'Portatil Gaming 2018','Ordenador portatil gaming para Windows 10, con un i7 de octava generacion',299.99,1,'no_image.jpg',
-       '2018-06-02','Bueno, tiene 12GB de RAM y una GTX1050 de 4GB ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'Apple I','Primer ordenador de apple',667.00,1,'no_image.jpg',
-       '1976-01-02','Muy Bueno, intacto ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'Apple II','Primer ordenador con exito comercial de apple',1298.00,1,'no_image.jpg',
-       '1977-06-01','Muy Buen estado de conservación ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'Apple III','Primer ordenador de los 80 de apple',1800.00,1,'no_image.jpg',
-       '1980-01-02','Bueno ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'Apple Lisa','Pototipo de apple de sistema de ventanas',1999.99,1,'no_image.jpg',
-       '1983-05-03','Muy Bueno ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'Apple Macintosh','Viene de un grupo de Ordenadores que provienen de la universidad de Zaragoza',599.99,1,'no_image.jpg',
-       '1984-07-01','Muy Usado, con muchos roces todas las unidades');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'PowerMac 5200','Orenador de apple muy usado en edicion en los 90',799.99,1,'no_image.jpg',
-       '1995-10-05','Muy Bueno ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'IMac G3','Ordenador con momitor integrado de finales de los 90',999.99,1,'no_image.jpg',
-       '1998-12-01','Muy Bueno ');
-INSERT INTO products(id_supplier,product_name,description,sale_price,stocks_units,image,release_date,product_status)
-VALUES(8,'iMac G4','Potente edicion y buen diseño de principios de los 2000',799.99,1,'no_image.jpg',
-       '2002-04-01','Muy Bueno ');
+VALUES(4,'Iphone Original 2007','OS touchscreen',159.99,1,'iphonev1.jpg',
+       '2001-12-03','Good conditions');
