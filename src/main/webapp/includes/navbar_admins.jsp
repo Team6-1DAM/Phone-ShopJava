@@ -13,9 +13,11 @@
                 <h3 class="fw-light">Admin panel</h3>
                 <p>
                     <a href="users.jsp" class="btn btn-info">Admin users</a>
+
                     <a href="edit_product.jsp" class="btn btn-info">Add products</a>
                     <a href="edit_supplier.jsp" class="btn btn-info">Add suppliers</a>
                     <a href="edit_orders.jsp" class="btn btn-info">Add order</a>
+
                 </p>
             </div>
         </div>

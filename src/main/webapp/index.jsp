@@ -55,12 +55,13 @@
                                 <%
                                 } else if (role.equals("user")) {
                                 %>
-                                <a href="view_products.jsp?id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
+
+                                <a href="view_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
                                 <%
                                 } else if (role.equals("admin")) {
                                 %>
-                                <a href="view_products.jsp?id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
-                                <a href="edit_products.jsp?id=<%= products.getId() %>" class="btn btn-sm btn-warning">Modify</a>
+                                <a href="view_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
+                                <a href="edit_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-warning">Modify</a>
                                 <a onclick="return confirmDelete()" href="delete_products?product_id=<%= products.getId() %>" class="btn btn-sm btn-danger">Delete</a>
                                 <%
                                     }

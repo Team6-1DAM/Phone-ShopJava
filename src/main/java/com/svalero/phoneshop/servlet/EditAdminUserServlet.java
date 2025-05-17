@@ -60,7 +60,7 @@ public class EditAdminUserServlet extends HttpServlet {
             User user = new User();
 
 
-            user.setId(Integer.parseInt(request.getParameter("id")));
+            user.setId(Integer.parseInt(request.getParameter("user_id")));
             user.setName(name);
             user.setEmail(email);
             user.setPhone(Integer.parseInt(phone));
