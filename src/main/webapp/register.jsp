@@ -7,7 +7,6 @@
     $("form").on("submit", function(event) {
       event.preventDefault();
       const formValue = $(this).serialize();
-
       $.ajax({
         url: "register",
         type: "POST",
@@ -70,12 +69,6 @@
         </div>
       </div>
 
-      <div class="form-check d-flex justify-content-center mb-5">
-        <input class="form-check-input me-2" type="checkbox" value="" id="tos" >
-        <label class="form-check-label" for="form2Example3">
-          I agree all statements in <a href="#!">Terms of service</a>
-        </label>
-      </div>
       <div class="input-group mb-3">
         <input class="btn btn-primary" type="submit" value="Registrarse">
       </div>

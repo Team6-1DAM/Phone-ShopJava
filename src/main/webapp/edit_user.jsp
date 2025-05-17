@@ -15,7 +15,6 @@
   String action;
   User user = null;
   String usernameId = currentSession.getAttribute("username").toString();
-  System.out.println("AAAAAAAAAAAAA" + usernameId);
   if (usernameId != null) {
     action = "Modificar";
     Database database = new Database();
@@ -28,7 +27,6 @@
 
     try {
       user = userDao.get(usernameId);
-      System.out.println(user);
     } catch (SQLException | UserNotFoundException e) {
       throw new RuntimeException(e);
     }

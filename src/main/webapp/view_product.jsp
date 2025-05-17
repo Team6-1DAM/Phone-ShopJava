@@ -71,9 +71,9 @@
 </div>
 
 <%
-} catch (DogNotFoundException dnfe) {
+} catch (ProductNotFoundException pnfe) {
 %>
-<%@ include file="includes/dog_not_found.jsp"%>
+<%@ include file="includes/product_not_found.jsp"%>
 <%
   }
 %>

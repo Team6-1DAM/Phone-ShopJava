@@ -23,7 +23,7 @@
 
 <%
   if ((currentSession.getAttribute("role") == null) || (!currentSession.getAttribute("role").equals("admin"))) {
-    response.sendRedirect("/shop_phone/login.jsp");
+    response.sendRedirect("/phone_shop/login.jsp");
   }
 
   String action;
@@ -67,7 +67,7 @@
       const formValue = new FormData(form);
       console.log(formValue);
       $.ajax({
-        url: "edit_product",
+        url: "edit_products",
         type: "POST",
         enctype: "multipart/form-data",
         data: formValue,
@@ -107,12 +107,12 @@
     <form class="row g-2 p-5" id="product-form" method="post" enctype="multipart/form-data">
       <h1 class="h3 mb-3 fw-normal"><%=action%> a product</h1>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="id_supplier" class="form-control" placeholder="Shelter_Id"
+        <input type="text" id="floatingTextarea" name="id_supplier" class="form-control" placeholder="Supplier ID"
                value="<%=products != null ? products.getId_supplier() : ""%>">
         <label for="floatingTextarea">Supplier Id</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="product_name" class="form-control" placeholder="Nombre"
+        <input type="text" id="floatingTextarea" name="product_name" class="form-control" placeholder="product name"
                value="<%=products != null ? products.getProduct_name() : ""%>">
         <label for="floatingTextarea">Name</label>
       </div>
@@ -122,7 +122,7 @@
         <label for="floatingTextarea">Description</label>
       </div>
       <div class="form-floating col-md-6">
-        <input type="text" id="floatingTextarea" name="sale¨_price" class="form-control" placeholder="genero"
+        <input type="text" id="floatingTextarea" name="sale_price" class="form-control" placeholder="genero"
                value="<%=products != null ? products.getSale_price() : ""%>">
         <label for="floatingTextarea">Sale Price</label>
       </div>
@@ -155,7 +155,7 @@
       </div>
 
       <div class="input-group mb-3">
-        <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Save">
+        <input onclick="return confirmModify()" class="btn btn-primary" type="submit" value="Guardar">
       </div>
 
       <input type="hidden" name="action" value="<%=action%>">

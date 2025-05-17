@@ -43,7 +43,7 @@
 
   String productImage;
   if (product == null) {
-    productImage = "default.jpg";
+    productImage = "no_image.jpg";
   } else {
     productImage = product.getImage();
   }
@@ -58,7 +58,7 @@
       const formValue = new FormData(form);
       console.log(formValue);
       $.ajax({
-        url: "edit_order",
+        url: "edit_orders",
         type: "POST",
         enctype: "multipart/form-data",
         data: formValue,

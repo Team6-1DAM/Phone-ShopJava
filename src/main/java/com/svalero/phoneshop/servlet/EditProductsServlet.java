@@ -6,6 +6,7 @@ import com.svalero.phoneshop.database.Database;
 import com.svalero.phoneshop.model.Products;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.File;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 @WebServlet("/edit_products")
-
+@MultipartConfig
 public class EditProductsServlet extends HttpServlet {
 
     private ArrayList<String> errors;
@@ -67,13 +68,12 @@ public class EditProductsServlet extends HttpServlet {
 
 
 
-            // Procesa la imagen del perro
+            // Procesa la imagen del producto
             if (action.equals("Registrar")) {
                 String filename = "no_image.jpg";
-                String imagePath = "C:/Users/S2-PC00\\Downloads\\apache-tomcat-9.0.105\\webapps\\images";
+                String imagePath = "C:/Users/S2-PC00/Desktop/apache-tomcat-9.0.105/webapps/phoneshop_images/";
                 if (image.getSize() != 0) {
-                    filename = UUID.randomUUID() + ".jpg";    // TODO por ahora solamente soportamos jpg
-                    // TODO Comprobar porque fallaba utilizar el contexto del servlet
+                    filename = UUID.randomUUID() + ".jpg";
 
                     InputStream inputStream = image.getInputStream();
                     Files.copy(inputStream, Path.of(imagePath + File.separator + filename));
@@ -114,11 +114,12 @@ public class EditProductsServlet extends HttpServlet {
 
     private boolean validate(HttpServletRequest request) {
         errors = new ArrayList<>();
-        if (request.getParameter("product_name").isEmpty()) {
-            errors.add("Name is a required field");
-        }
         if ((request.getParameter("sale_price").isEmpty()) || (!request.getParameter("sale_price").matches("^[0-9]+(\\.[0-9]{1,3})?$"))) {
             errors.add("Price is a required field");
+        }
+
+        if (request.getParameter("product_name").isEmpty()) {
+            errors.add("Product name is a required field");
         }
 
         return errors.isEmpty();

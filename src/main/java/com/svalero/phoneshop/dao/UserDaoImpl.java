@@ -59,9 +59,9 @@ public class UserDaoImpl implements UserDao {
             statement.setInt(3, 0);
             statement.setString(4, "unknown");
             statement.setDate(5, Date.valueOf("1990-01-01"));
-            statement.setString(8, "user");
-            statement.setString(9, username);
-            statement.setString(10, password);
+            statement.setString(6, "user");
+            statement.setString(7, username);
+            statement.setString(8, password);
 
 
             int affectedRows = statement.executeUpdate();
@@ -138,10 +138,10 @@ public class UserDaoImpl implements UserDao {
         statement.setInt(3, user.getPhone());
         statement.setString(4, user.getCity());
         statement.setDate(5, user.getBirth_date());
-        statement.setString(8, user.getRole());
-        statement.setString(9, user.getUsername());
-        statement.setString(10, user.getPassword());
-        statement.setInt(11, user.getId());
+        statement.setString(6, user.getRole());
+        statement.setString(7, user.getUsername());
+        statement.setString(8, user.getPassword());
+        statement.setInt(9, user.getId());
         int affectedRows = statement.executeUpdate();
 
         return affectedRows != 0;

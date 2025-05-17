@@ -19,8 +19,8 @@
     System.out.println("Supplier id :" + supplierId);
 
 
-    if (supplier != null) {
-        action = "Update";
+    if (supplierId != null) {
+        action = "Modificar";
         Database database = new Database();
         try {
             database.connect();
@@ -34,7 +34,7 @@
             throw new RuntimeException(e);
         }
     } else {
-        action = "Sign In";
+        action = "Registrar";
     }
 
 %>
@@ -107,7 +107,7 @@
                 <label for="floatingTextarea">Telefono</label>
             </div>
             <div class="form-floating col-md-6">
-                <input type="date" id="floatingTextarea" name="foundation_date" class="form-control" placeholder="Donation"
+                <input type="" id="floatingTextarea" name="foundation_date" class="form-control" placeholder="Donation"
                        value="<%=supplier != null ? supplier.getZip_code(): ""%>">
                 <label for="floatingTextarea">Zip Code</label>
             </div>
