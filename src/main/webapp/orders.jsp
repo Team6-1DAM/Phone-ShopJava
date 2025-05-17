@@ -71,12 +71,12 @@
                 <%
                 } else if (role.equals("user")) {
                 %>
-                <a href="view_orders.jsp?id=<%= orders.getId() %>" class="btn btn-sm btn-secondary">More info</a>
+                <a href="view_orders.jsp?order_id=<%= orders.getId() %>" class="btn btn-sm btn-secondary">More info</a>
                 <%
                 } else if (role.equals("admin")) {
-                %><a href="view_orders.jsp?id=<%= orders.getId() %>" class="btn btn-sm btn-secondary">More info</a>
-                <a href="edit_orders.jsp?id=<%= orders.getId()%>" class="btn btn-sm btn-warning">Modify</a>
-                <a onclick="return confirmDelete()" href="/delete_orders?id=<%= orders.getId() %>" class="btn btn-sm btn-danger">Delete</a>
+                %><a href="view_orders.jsp?order_id=<%= orders.getId() %>" class="btn btn-sm btn-secondary">More info</a>
+                <a href="edit_orders.jsp?order_id=<%= orders.getId()%>" class="btn btn-sm btn-warning">Modify</a>
+                <a onclick="return confirmDelete()" href="/delete_orders?order_id=<%= orders.getId() %>" class="btn btn-sm btn-danger">Delete</a>
                 <%
                   }
                 %>

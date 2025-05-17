@@ -18,7 +18,7 @@ public interface OrderDao {
     Orders getByUserId(int userId) throws SQLException, OrderNotFoundException;
     public int getOrdersByUserId(int userId) throws SQLException;
     Orders getByProductsId(int productId) throws SQLException, OrderNotFoundException;
-    Orders getByShelterId(int userId) throws SQLException, OrderNotFoundException;
+    Orders getBySupplierId(int userId) throws SQLException, OrderNotFoundException;
     Orders getByDateRange(Date startDate, Date endDate) throws SQLException, OrderNotFoundException;
 
     // Update

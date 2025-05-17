@@ -5,6 +5,7 @@
 <%@ page import="com.svalero.phoneshop.model.User" %>
 <%@ page import="com.svalero.phoneshop.exception.ProductNotFoundException" %>
 <%@ page import="com.svalero.phoneshop.exception.OrderNotFoundException" %>
+<%@ page import="com.svalero.phoneshop.util.DateUtils" %>
 <%@ include file="includes/header.jsp"%>
 <%@ include file="includes/navbar.jsp"%>
 <div class="album py-5 bg-body-tertiary">
@@ -43,7 +44,7 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Comments: <%= orders.getNotes() %></li>
-        <li class="list-group-item">Order date: <%= com.svalero.phone_shop.util.DateUtils.format(orders.getOrder_date()) %></li>
+        <li class="list-group-item">Order date: <%= DateUtils.format(orders.getOrder_date()) %></li>
       </ul>
       <div class="card-body">
         <%

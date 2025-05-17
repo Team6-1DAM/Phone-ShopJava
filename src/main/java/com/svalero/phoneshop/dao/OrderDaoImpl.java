@@ -140,7 +140,7 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public Orders getByShelterId(int userId) throws SQLException, OrderNotFoundException {
+    public Orders getBySupplierId(int userId) throws SQLException, OrderNotFoundException {
         String sql = "SELECT * FROM orders WHERE id_user = ?";
 
         PreparedStatement statement;

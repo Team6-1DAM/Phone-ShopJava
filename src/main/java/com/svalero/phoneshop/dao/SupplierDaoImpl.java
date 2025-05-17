@@ -126,7 +126,7 @@ public class SupplierDaoImpl implements SupplierDao {
             statement.setString(2, "%" + search[0] + "%");
         }
         result = statement.executeQuery();
-        ArrayList<Supplier> shelterList = new ArrayList<>();
+        ArrayList<Supplier> supplierList = new ArrayList<>();
         while (result.next()) {
             Supplier supplier = new Supplier();
             supplier.setId(result.getInt("id"));
@@ -137,12 +137,12 @@ public class SupplierDaoImpl implements SupplierDao {
             supplier.setWebsite(result.getString("website"));
             supplier.setEmail(result.getString("email"));
 
-            shelterList.add(supplier);
+            supplierList.add(supplier);
         }
 
         statement.close();
 
-        return shelterList;
+        return supplierList;
     }
 
 }

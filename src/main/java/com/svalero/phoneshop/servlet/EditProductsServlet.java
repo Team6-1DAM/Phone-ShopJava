@@ -69,8 +69,8 @@ public class EditProductsServlet extends HttpServlet {
 
             // Procesa la imagen del perro
             if (action.equals("Registrar")) {
-                String filename = "default.jpg";
-                String imagePath = "C:/Users/S2-PC00/Desktop/apache-tomcat-9.0.105/webapps/phoneshop_images";
+                String filename = "no_image.jpg";
+                String imagePath = "C:/Users/S2-PC00\\Downloads\\apache-tomcat-9.0.105\\webapps\\images";
                 if (image.getSize() != 0) {
                     filename = UUID.randomUUID() + ".jpg";    // TODO por ahora solamente soportamos jpg
                     // TODO Comprobar porque fallaba utilizar el contexto del servlet
