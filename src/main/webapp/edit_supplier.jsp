@@ -16,9 +16,6 @@
     String action;
     Supplier supplier = null;
     String supplierId = request.getParameter("supplier_id");
-    System.out.println("Supplier id :" + supplierId);
-
-
     if (supplierId != null) {
         action = "Modificar";
         Database database = new Database();
@@ -36,6 +33,12 @@
     } else {
         action = "Registrar";
     }
+    String translate;
+    if (action.contentEquals("Registrar")) {
+        translate = "Register";
+    } else {
+        translate = "Modify";
+    }
 
 %>
 
@@ -45,7 +48,7 @@
             event.preventDefault();
             const form = $("#supplier-form")[0];
             const formValue = new FormData(form);
-            console.log(formValue);
+            console.log(form);
             $.ajax({
                 url: "edit_supplier",
                 type: "POST",
@@ -85,11 +88,11 @@
 <div class="container d-flex justify-content-center">
     <div class="card" style="width: 50rem;">
         <form class="row g-2 p-5" id="supplier-form" method="post" enctype="multipart/form-data">
-            <h1 class="h3 mb-3 fw-normal"><%=action%> Supplier</h1>
+            <h1 class="h3 mb-3 fw-normal"><%=translate%> Supplier</h1>
             <div class="form-floating col-md-6">
-                <input type="text" id="floatingTextarea" name="supplier_name" class="form-control" placeholder="Name Supplier"
-                       value="<%=supplier != null ? supplier.getSupplier_name() : ""%>">
-                <label for="floatingTextarea">Name Supplier</label>
+                <input type="text" id="floatingTextarea" name="supplier_name" class="form-control" placeholder="Supplier name"
+                       value="<%= supplier != null ? supplier.getSupplier_name() : ""%>">
+                <label for="floatingTextarea">Name</label>
             </div>
             <div class="form-floating col-md-6">
 

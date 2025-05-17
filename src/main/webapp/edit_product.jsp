@@ -51,12 +51,18 @@
   }
 
   String productImage;
-  if (products == null) {
+
+  if (products == null){
     productImage = "no_image.jpg";
   } else {
     productImage = products.getImage();
   }
-
+  String translate;
+  if (action.contentEquals("Registrar")) {
+    translate = "Register";
+  } else {
+    translate = "Modify";
+  }
 %>
 
 <script type="text/javascript">
@@ -67,7 +73,7 @@
       const formValue = new FormData(form);
       console.log(formValue);
       $.ajax({
-        url: "edit_products",
+        url: "edit_product",
         type: "POST",
         enctype: "multipart/form-data",
         data: formValue,
@@ -105,7 +111,7 @@
   <div class="card" style="width: 50rem;">
     <img class="img-thumbnail" src="/phoneshop_images/<%=productImage%>" style="width: 100%; height: auto;">
     <form class="row g-2 p-5" id="product-form" method="post" enctype="multipart/form-data">
-      <h1 class="h3 mb-3 fw-normal"><%=action%> a product</h1>
+      <h1 class="h3 mb-3 fw-normal"><%=translate%> a product</h1>
       <div class="form-floating col-md-6">
         <input type="text" id="floatingTextarea" name="id_supplier" class="form-control" placeholder="Supplier ID"
                value="<%=products != null ? products.getId_supplier() : ""%>">

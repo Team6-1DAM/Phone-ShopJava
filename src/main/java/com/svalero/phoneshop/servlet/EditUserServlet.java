@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet("/edit_user")
-
+@MultipartConfig
 public class EditUserServlet extends HttpServlet {
 
     private ArrayList<String> errors;

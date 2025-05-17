@@ -33,6 +33,12 @@
   } else {
     action = "Registrar";
   }
+  String translate;
+  if (action.contentEquals("Registrar")) {
+    translate = "Register";
+  } else {
+    translate = "Modify";
+  }
 %>
 
 <script type="text/javascript">
@@ -84,7 +90,7 @@
   <div class="container d-flex justify-content-center ">
     <!-- TODO Validar formulario -->
     <form class=" row g-2 w-50" id="user-form" method="post" enctype="multipart/form-data">
-      <h1 class="h3 mb-3 fw-normal"><%= action %> your profile</h1>
+      <h1 class="h3 mb-3 fw-normal"><%= translate %> your profile</h1>
       <div class="form-floating col-md-6">
 
         <input type="text" id="floatingTextarea" name="name" class="form-control" placeholder="Name"

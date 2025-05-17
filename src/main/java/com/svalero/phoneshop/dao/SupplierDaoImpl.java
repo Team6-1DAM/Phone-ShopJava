@@ -29,7 +29,6 @@ public class SupplierDaoImpl implements SupplierDao {
         statement.setString(3, supplier.getAddress());
         statement.setString(4,  supplier.getZip_code());
         statement.setString(5, supplier.getCity());
-
         statement.setString(6, supplier.getCountry());
         statement.setString(7, supplier.getWebsite());
         statement.setString(8, supplier.getEmail());
@@ -133,7 +132,7 @@ public class SupplierDaoImpl implements SupplierDao {
             Supplier supplier = new Supplier();
             supplier.setId(result.getInt("id"));
             supplier.setSupplier_name(result.getString("supplier_name"));
-            supplier.setSupplier_name(result.getString("zip_code"));
+            supplier.setZip_code(result.getString("zip_code"));
             supplier.setAddress(result.getString("address"));
             supplier.setTel(result.getString("tel"));
             supplier.setCountry(result.getString("country"));

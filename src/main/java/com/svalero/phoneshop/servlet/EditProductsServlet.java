@@ -21,7 +21,7 @@ import java.util.UUID;
 
 
 @WebServlet("/edit_product")
-
+@MultipartConfig
 
 public class EditProductsServlet extends HttpServlet {
 

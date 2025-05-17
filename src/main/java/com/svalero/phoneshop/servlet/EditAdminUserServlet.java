@@ -28,7 +28,7 @@ public class EditAdminUserServlet extends HttpServlet {
         HttpSession currentSession = request.getSession();
 
         if (currentSession.getAttribute("role") == null || !(currentSession.getAttribute("role").equals("admin"))) {
-            response.sendRedirect("/shelter/login.jsp");
+            response.sendRedirect("/phone_shop/login.jsp");
             return;
         }
 
@@ -45,8 +45,6 @@ public class EditAdminUserServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String city = request.getParameter("city");
         String birth_date = request.getParameter("birth_date");
-        String canAdopt = request.getParameter("canAdopt");
-        String rating = request.getParameter("rating");
         String role = request.getParameter("role");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
