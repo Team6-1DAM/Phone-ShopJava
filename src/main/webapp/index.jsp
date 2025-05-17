@@ -55,6 +55,7 @@
                                 <%
                                 } else if (role.equals("user")) {
                                 %>
+
                                 <a href="view_product.jsp?product_id=<%= products.getId() %>" class="btn btn-sm btn-secondary">Details</a>
                                 <%
                                 } else if (role.equals("admin")) {
